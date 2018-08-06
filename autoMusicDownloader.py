@@ -126,7 +126,6 @@ def main():
                                     print("Unable to open "+destDir+"/"+filename)
                                     return
                                 fp.write(song)
-                                fp.write("\n")
                                 fp.close()
                         else:
                             print("Skipping. The song already exists locally.")
