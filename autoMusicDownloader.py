@@ -105,13 +105,14 @@ def main():
 
             for row in values[1:]:
                 if (len(row) >= colIndex+1):
-                    song = row[colIndex]
+                    song = row[colIndex].strip()
                     if song:
                         fp = open_downloaded_songs_list(destDir+"/"+filename)
                         downloadedSongs = fp.readlines()
                         fp.close()
                         songExists = False
                         for dlSong in downloadedSongs:
+                            dlSong = dlSong.strip()
                             # TODO: Need fuzzy search here.
                             if (dlSong.find(song) == 0):
                                 songExists = True
